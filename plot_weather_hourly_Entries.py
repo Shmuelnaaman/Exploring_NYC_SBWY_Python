@@ -50,22 +50,22 @@ def plot_weather_hourly_Entries(turnstile_weather):
     # Dyl_avgr1=(Dyl_avgr[Dyl_avgr['Dow1']=='2']).reset_index()
 
     Dyl_avgn1 = (Dyl_avg1[Dyl_avg1.index.labels[1] == 0]).reset_index()
-    #Dyl_avgn1=(Dyl_avgn[Dyl_avgn['Dow1']=='2']).reset_index()
-    
+    # Dyl_avgn1=(Dyl_avgn[Dyl_avgn['Dow1']=='2']).reset_index()
+
     Dyl_avgr1['rain1'] = 2*(Dyl_avgr1['ENTRIESn_hourly'] -
         Dyl_avgn1['ENTRIESn_hourly']) / (Dyl_avgr1['ENTRIESn_hourly'] +
         Dyl_avgn1['ENTRIESn_hourly'])
     # Ridership by  hour of the day
 
     plot = ggplot(Dyl_avgr1, aes(x=Dyl_avgr1['Hour'], y='rain1')) +\
-    geom_bar(aes(x=Dyl_avgr1['Hour'],
+        geom_bar(aes(x=Dyl_avgr1['Hour'],
                  weight='rain1',
                  width=.8,
                  fill='blue'), stat="identity") +\
-    scale_x_continuous(name="Hour of the Days", breaks=(range(24))) +\
-    scale_y_continuous(name="mean ENTRIES") +\
-    ggtitle("differance betwee Avg Enteries during rainy and non rainy by hour") +\
-    xlim(-1, 24) +\
-    ylim(-0.15, 0.15)
+        scale_x_continuous(name="Hour of the Days", breaks=(range(24))) +\
+        scale_y_continuous(name="mean ENTRIES") +\
+        ggtitle("differance betwee Avg Enteries during rainy and non rainy by hour") +\
+        xlim(-1, 24) +\
+        ylim(-0.15, 0.15)
 
     return plot
