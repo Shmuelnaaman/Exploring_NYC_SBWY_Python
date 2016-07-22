@@ -1,5 +1,6 @@
-Intro_to_datascience
+# NYC Subway data
 ====================
 
-Look at NYC Subway data and figure out if more people ride the subway when it is raining versus when it is not raining.
-Wrangle the NYC subway data, use statistical methods and data visualization to draw an interesting conclusion about the subway dataset that you've analyzed.
+### In this project I use non-parametric statistical test, data visualization and regression model to examine if more people ride the NYC subway when it is raining versus when it is not raining.
+
+## Please read the PDF report for detailed analysis. 
